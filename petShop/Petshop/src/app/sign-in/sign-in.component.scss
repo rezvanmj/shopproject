@@ -1,0 +1,55 @@
+$blue1 :#759FB2 ;
+$blue2 :#80AAFF;
+$blue3:rgb(60, 60, 250) ;
+$gray:#9E9E9E ;
+
+.input{
+  border: none ;
+  border-bottom:1px solid #759FB2 ;
+  max-width: 300px;
+  height: 30px;
+  margin: 10px;
+  border-radius: 6px;
+  direction:rtl;
+  border-radius: 0px;
+}
+
+
+.signin-component {
+  margin: 0;
+  height: 700px;
+form{
+  padding: 30px 20px;
+  border:1px solid rgb(219, 219, 219);
+  max-width: 400px;
+  border-radius: 6px;
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin: auto;
+  top: 40%
+}
+
+  .name-input{
+    @extend .input;
+  }
+
+  .password-input{
+    @extend .input
+  }
+
+  .signin-btn{
+    padding:10px 20px;
+    border:2px solid #146A0A;
+    color:#146A0A;
+    background: transparent;
+    margin: 10px;
+    border-radius:6px;
+    transition:0.5s;
+  }
+  .signin-btn:hover{
+    border:2px solid #146A0A;
+    color:white;
+    background:#146A0A;
+  }
+}

@@ -1,0 +1,47 @@
+@font-face{
+  font-family: shabnam;
+  src:url(../assets/fonts/Shabnam-Bold.eot);
+  src:url(../assets/fonts/Shabnam.ttf);
+  src:url(../assets/fonts/Shabnam.woff);
+}
+
+body{
+  font-family: shabnam ;
+}
+
+a{cursor:pointer ;
+font-size:15px;}
+
+
+.blue-navbar{
+
+  background:#759FB2;
+  box-shadow: 2px 2px 2px gray;
+
+  a{color:black;}
+
+  i{font-size:40px;}
+
+  .authenticate{
+    display: inline-flex;
+  }
+
+}
+
+
+.pet-footer{
+  background:#9E9E9E;
+  overflow: hidden;
+  border-bottom:2px solid gray;
+    //  margin-top: 100%;
+  i{color:black;}
+
+  p{font-size:10px;
+  color:#0054ff;}
+}
+
+@media(min-width:768px){}
+
+@media(max-width:768px){}
+
+@media(max-width:468px){}

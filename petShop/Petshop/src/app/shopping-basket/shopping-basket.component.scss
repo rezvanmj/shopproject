@@ -1,0 +1,154 @@
+$blue1 :#5a92ac ;
+$blue2 :#80AAFF;
+$blue3:rgb(60, 60, 250) ;
+$gray:#9E9E9E ;
+
+
+a{
+  cursor:pointer;
+}
+
+
+@media(max-width:768px){
+  .basket-product-container{
+    .product-image{
+    text-align: center;
+     img{
+       max-width: 150px !important;
+     }
+    }
+
+    .product-name{
+      text-align: center;
+    }
+
+    .product-btn{
+      justify-content: center ;
+    }
+}
+}
+
+@media(min-width:768px){
+  .basket-product-container{
+    .product-image{
+     text-align: right;
+
+    }
+    .product-name{
+      text-align: right;
+    }
+
+
+    .product-btn{
+      justify-content: end ;
+    }
+}
+}
+
+
+  .basket-title{
+  border-bottom: 2px solid rgb(197, 197, 197);
+  font-size: 20px;
+  font-weight: 900;
+  color:$blue1 ;
+  max-width:80%;
+  }
+
+.basket-product-container{
+
+
+
+  ul{
+      padding:30px !important;
+      li{list-style: none;
+      direction: rtl;}
+    }
+
+
+  .basket-product{
+     background-color:#D6E5ED;
+     border:2px solid gray ;
+     border-radius: 6px;
+     margin: 6px;
+
+
+
+
+
+
+    .product-image{
+      order:1;
+      img{
+      max-width:200px;
+      border-radius: 50%;
+
+    }
+    }
+
+    .product-name{
+     order:2;
+
+     h2{
+       color:$blue1;
+     }
+
+     p{
+      color:$blue1;
+      font-weight: 800;
+      font-size: 15px;
+     }
+    }
+
+    .product-btn{
+      display: grid;
+      flex-direction: column;
+      order:3;
+
+
+     button{
+       background:#FFE1E1 ;
+       border: 3px solid #C86E6E;
+       max-width: 120px;
+       border-radius: 6px;
+       margin: 5px;
+      i{
+         color:#C86E6E;
+       }
+
+     }
+
+    .add-too-favorite-container{
+        flex-grow: 1;
+        display: inline-flex;
+        justify-content: flex-end;
+        color:$blue1;
+        margin: 5px;
+      }
+    }
+  }
+
+
+.product-prices{
+
+  padding: 10px;
+  background:$blue1;
+
+  .buy-btn-container{
+  button{color:white;
+  background-color: #377B37;
+  border: 1px solid #0f350f;
+   padding:10px 20px;
+  border-radius: 6px;}
+   }
+
+  .price-sum-container{
+    direction:rtl;
+    display: inline-flex;
+    justify-content: right;
+    text-align: right;
+   p{font-size: 17px;
+  padding:10px;}
+  }
+}
+
+}
