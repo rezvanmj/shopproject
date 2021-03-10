@@ -19,6 +19,9 @@ a{
 
 
   .basket-product-container{
+
+
+
     .product-image{
     text-align: center;
      img{
@@ -61,16 +64,16 @@ a{
   color:$blue1 ;
   max-width:80%;
   }
-.bas-title{
-  padding: 0px !important;
-  margin: 0px !important;
-}
+
+ .fav-title{padding: 0px !important;
+  margin: 0px !important;}
+
 .basket-product-container{
 
 
 
   ul{
-      padding:20px !important;
+      padding:30px !important;
       li{list-style: none;
       direction: rtl;}
     }
@@ -140,8 +143,7 @@ a{
 
 
 .product-prices{
-  border-top-right-radius: 8px;
-  border-top-left-radius: 8px;
+
   padding: 10px;
   background:$blue1;
 

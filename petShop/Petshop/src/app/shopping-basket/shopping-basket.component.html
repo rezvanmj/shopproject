@@ -1,23 +1,24 @@
-<div class="justify-content-center row"><p class=" basket-title text-center col-12 my-5">سبد خرید</p></div>
+<div class="justify-content-center row container-fluid bas-title"><p class=" basket-title text-center col-12 my-5 py-5">سبد خرید</p></div>
 
 <div class="basket-product-container justify-content-center container-fluid">
 
-<ul class="product-lists cotainer-fluid text-center justify-content-center ">
-<li class="added-product basket-product row my-5" >
+<ul   class="product-lists cotainer-fluid text-center justify-content-center ">
+
+  <li *ngFor="let shoppingProduct of shoppingProducts"class="added-product basket-product row my-5" >
 
 <div class="product-image col-lg-3 col-md-3 col-sm-4 ">
-  <img class="image-picture my-3" src="../../assets/images/120173296.jpg">
+  <img class="image-picture my-3" src="{{shoppingProduct.image}}">
 </div>
 
 
 <div class="product-name col-lg-6 col-md-6 col-sm-4 my-5">
-<h2>جای خواب گربه</h2>
-<p>قیمت :430000</p>
+<h2>{{shoppingProduct.name}}</h2>
+<p>قیمت : {{shoppingProduct.price}}</p>
 </div>
 
 
 <div class="product-btn col-lg-3 col-md-3 col-sm-4 my-5">
-<button class="remove-btn">حذف از لیست  <i class="far fa-window-close my-1 mx-1"></i></button>
+<button class="remove-btn" (click)="removeFromBasket(shoppingProduct); updatePrice();">حذف از لیست  <i class="far fa-window-close my-1 mx-1"></i></button>
 <a class="add-too-favorite-container justify-content-center "><p class="favorite-text">افزودن به علاقه مندی ها</p><i class="far fa-heart my-1 mx-1"></i></a>
 </div>
 
@@ -25,7 +26,7 @@
 
 
 
-
+<!--
 <li class="added-product basket-product row my-5" >
 
   <div class="product-image col-lg-3 col-md-3 col-sm-4 ">
@@ -68,7 +69,7 @@
     <a class="add-too-favorite-container justify-content-center "><p class="favorite-text">افزودن به علاقه مندی ها</p><i class="far fa-heart my-1 mx-1"></i></a>
     </div>
 
-    </li>
+    </li>-- -->
 </ul>
 
 
@@ -80,8 +81,9 @@
   <button class="payment-btn"> پرداخت</button>
 </div>
 <div class=" price-sum-container col-5">
-<p> مبلغ کل: </p><p>6666</p>
+<p> مبلغ کل: </p><p>{{sum}}</p>
 </div>
 </div>
 </div>
 </div>
+

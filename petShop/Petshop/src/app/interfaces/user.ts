@@ -1,7 +1,10 @@
 export interface IUser {
 
-id: number ;
-username : String ;
+name: String ;
+LastName: String ;
 password : String ;
+Email :String ;
+userName: String ;
+id : number ;
 
 }

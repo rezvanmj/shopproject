@@ -5,6 +5,14 @@ $blue4:#B7E6FF;
 $blue3:rgb(60, 60, 250) ;
 $gray:#9E9E9E ;
 
+@media(max-width:760px){
+img{
+  margin:0px !important;
+}
+}
+
+
+
 a{cursor: pointer;}
 
 
@@ -26,6 +34,9 @@ img{
 
 carousel{
   justify-content: center !important;
+  p{
+    color:$blue1;
+  }
 }
 
 

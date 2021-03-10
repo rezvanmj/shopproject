@@ -1,13 +1,13 @@
 <div class="container-fluid product-component">
 
 <div class=" product-detail-container  row container-fluid justify-content-center ">
-  <div class=" product-detail my-5 col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center justify-content-center ">
+  <div class=" product-detail my-5 col-lg-4 col-md-6 col-sm-12 col-xs-12 text-center justify-content-center ">
 
-     <div class="product-name"> <h2>name</h2> </div>
+     <div class="product-name"> <h2>{{product.name}}</h2> </div>
 
-     <div class="product-information"> <p>info</p></div>
+     <div class="product-information justify-content-center text-center d-flex"> <p>{{product.information}}</p></div>
 
-     <div class="product-price my-2">price</div>
+     <div class="product-price my-2">{{product.price}} قیمت</div>
 
      <div class="product-button"><button class="add-too-basket-btn">افزودن به سبد خرید<i class="fas fa-shopping-basket"></i></button></div>
 
@@ -15,9 +15,9 @@
   </div>
 
 
-  <div class="zoom-image-container col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center justify-content-center ">
-     <div class="product-image my-2"><img src="../../assets/images/120173296.jpg" class="product-picture"></div>
-     <a class="add-too-favorite-container justify-content-center "><p class="favorite-text">افزودن به علاقه مندی ها</p><i class="far fa-heart my-1 mx-1"></i></a>
+  <div class="zoom-image-container col-lg-4 col-md-6 col-sm-12 col-xs-12 text-center justify-content-center ">
+     <div class="product-image my-2"><img src="{{product.image}}" class="product-picture"></div>
+     <a class="add-too-favorite-container "><p class="favorite-text">افزودن به علاقه مندی ها</p><i class="far fa-heart my-1 mx-1"></i></a>
   </div>
 </div>
 

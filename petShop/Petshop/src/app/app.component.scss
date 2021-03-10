@@ -15,6 +15,13 @@ font-size:15px;}
 
 .blue-navbar{
 
+padding-top:20px;
+ .navbar-auth{
+   a{
+     font-size:13px;
+     padding:0px!important;
+   }
+ }
   background:#759FB2;
   box-shadow: 2px 2px 2px gray;
 
@@ -28,8 +35,11 @@ font-size:15px;}
 
 }
 
-
+.position-relative {
+  position: relative;
+}
 .pet-footer{
+  box-shadow: -2px -2px 5px rgb(75, 75, 75);
   background:#9E9E9E;
   overflow: hidden;
   border-bottom:2px solid gray;

@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignInComponent implements OnInit {
 
+
+  name:String = "";
+  pass:String ="";
+temp:String ="";
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+
+  func(){
+   this.temp="hello " + this.name;
   }
 
 }

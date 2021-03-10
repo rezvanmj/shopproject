@@ -1,3 +1,5 @@
+import { ProductOfferService } from './../product-offer.service';
+import { IProduct } from './../interfaces/products';
 import { Component, OnInit } from '@angular/core';
 declare var $: any;
 
@@ -14,16 +16,7 @@ export class ProductOffersComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  productOffers :IProduct[] = ProductOfferService.ProductsOffers ;
 
-  slides = [
-    {image: '../../assets/images/120173296.jpg'},
-    {image: '../../assets/images/120173296.jpg'},
-    {image: '../../assets/images/120173296.jpg'},
-    {image: '../../assets/images/120173296.jpg'},
-    {image: '../../assets/images/120173296.jpg'},
-    {image: '../../assets/images/120173296.jpg'},
-    {image: '../../assets/images/120173296.jpg'},
-    {image: '../../assets/images/120173296.jpg'},
-  ];
 
 }

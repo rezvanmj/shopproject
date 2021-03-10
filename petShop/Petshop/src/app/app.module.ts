@@ -1,3 +1,4 @@
+import { ShoppingBasketService } from './shopping-basket.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
@@ -11,14 +12,17 @@ import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 import { SignupComponent } from './signup/signup.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { FavoriteProductsComponent } from './favorite-products/favorite-products.component';
+import { FormsModule } from '@angular/forms';
 
 const routes : Routes =[
   {path:"" , component: HomeComponent},
-  {path: "product" , component:ProductComponent},
+  // {path: "product" , component:ProductComponent},
   {path: "product/:id" , component:ProductComponent},
   {path: "shoppingBasket" , component:ShoppingBasketComponent},
   {path:  "signup" , component:SignupComponent},
-  {path : "signIn" , component:SignInComponent}
+  {path : "signIn" , component:SignInComponent},
+  {path: "favorite" , component:FavoriteProductsComponent},
 ]
 
 @NgModule({
@@ -30,16 +34,18 @@ const routes : Routes =[
     ProductOffersComponent,
     SignupComponent,
     SignInComponent,
+    FavoriteProductsComponent,
 
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     NgbModule,
+    FormsModule,
     [NgbPaginationModule, NgbAlertModule],
     [CarouselModule.forRoot()],
   ],
-  providers: [],
+  providers: [ShoppingBasketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

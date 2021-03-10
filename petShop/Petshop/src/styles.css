@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face{
+  font-family: shabnam;
+  src:url(../../Petshop/src/assets/fonts/Shabnam-Bold.eot);
+  src:url(../../Petshop/src/assets/fonts/Shabnam.ttf);
+  src:url(../../Petshop/src/assets/fonts/Shabnam.woff);
+}
+
+div{font-family:shabnam;}
+p{font-family:shabnam;}
+a{font-family:shabnam;}
+label{font-family:shabnam;}
+

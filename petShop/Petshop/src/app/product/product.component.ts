@@ -1,5 +1,9 @@
+import { ProductsService } from './../products.service';
+import { HomeComponent } from './../home/home.component';
 import { IProduct } from './../interfaces/products';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-product',
@@ -8,39 +12,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private activeRouter : ActivatedRoute ) { }
+  product:IProduct ;
   ngOnInit(): void {
+
+  this.product = ProductsService.products.find(product =>product.id == this.activeRouter.snapshot.params['id']);
+
   }
 
-  products:IProduct[]=[
-    {
-      name: "جای خواب گربه",
-    id : 1 ,
-    price: 43000,
-    image: "../../assets/images/120173296.jpg" ,
-    availablity: true ,
-    information : "جای خواب گربه جای خواب گربه جای خواب گربه"
-    } ,
 
-    {
-      name: "قلاده ی گربه",
-      id : 2 ,
-      price: 43000,
-      image: "../../assets/images/4181.jpg" ,
-      availablity: true ,
-      information : "جای خواب گربه جای خواب گربه جای خواب گربه"
-    },
-    {
-      name: "غذای خشک گربه",
-      id : 3 ,
-      price: 43000,
-      image: "../../assets/images/d26e1ee6a0645cfbba8bdb98409527677fbc089a_1597160936.jpg" ,
-      availablity: true ,
-      information : "جای خواب گربه جای خواب گربه جای خواب گربه"
-    }
-
-  ];
 
 
 
