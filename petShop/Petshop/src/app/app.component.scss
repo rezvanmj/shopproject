@@ -15,6 +15,13 @@ font-size:15px;}
 
 .blue-navbar{
 
+
+ .sign-out{
+   direction: rtl;
+   i{font-size: 20px;
+    vertical-align: middle;}
+ }
+
 padding-top:20px;
  .navbar-auth{
    a{
@@ -25,7 +32,18 @@ padding-top:20px;
   background:#759FB2;
   box-shadow: 2px 2px 2px gray;
 
-  a{color:black;}
+  a{color:black;
+    font-size: 15px;
+    font-weight: 800;
+
+  }
+
+  li{
+    a{
+
+    margin: 10px;
+    }
+  }
 
   i{font-size:40px;}
 

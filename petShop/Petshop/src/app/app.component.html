@@ -5,20 +5,25 @@
 
 
  <nav class="navbar navbar-expand-lg navbar-light  blue-navbar mr-auto">
-  <div class=" navbar-auth navbar-brand d-flex mr-auto">
+  <div *ngIf="!UserLoggedin && !AdminLoggedin" class=" navbar-auth navbar-brand d-flex mr-auto">
     <a class="nav-item nav-link"  [routerLink]="['signup']">ثبت نام</a>
-    <a class="nav-item nav-link" [routerLink]="['signIn']">/ورود</a></div>
+    <a class="nav-item nav-link" [routerLink]="['signIn']">/ورود</a>
+  </div>
+
+  <div *ngIf="UserLoggedin || AdminLoggedin" class=" navbar-auth navbar-brand d-flex mr-auto">
+    <a (click)="logOut()" class="nav-item nav-link sign-out"  [routerLink]="['']">خروج <i class="fas fa-sign-out-alt"></i></a>
+  </div>
 
 
-<div class="navbar-brand">
+<div class="navbar-brand"  *ngIf="UserLoggedin">
     <a [routerLink]="['shoppingBasket']" class=" ml-auto">
     <i class="fa" style="font-size: 24px">&#xf07a;</i>
-    <span class="badge badge-warning" id="lblCartCount"><small>0</small> </span>
+    <span class="badge badge-warning" id="lblCartCount"><small>{{CountingBasketProduct}}</small> </span>
   </a>
 
   <a [routerLink]="['favorite']" class="">
     <i class="fa" style="font-size: 24px">&#xf004;</i>
-    <span class="badge badge-warning" id="lblCartCount"><small>0</small> </span>
+    <span class="badge badge-warning" id="lblCartCount"><small>{{countingFavoriteProduct}}</small> </span>
   </a>
 </div>
 
@@ -36,29 +41,26 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
+ <li>
+        <a  class="nav-link">درباره ی ما</a>
+       </li>
 
+       <li>
+        <a  class="nav-link">پیشنهاد ها </a>
+       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['']" >محصولات</a>
+        <a  *ngIf="!AdminLoggedin" class="nav-link" [routerLink]="['']" >محصولات</a>
       </li>
       <li>
-       <a class="nav-link">ویرایش محصولات</a>
+       <a *ngIf="AdminLoggedin" class="nav-link" [routerLink]="['editProducts']">ویرایش محصولات</a>
       </li>
+
+
     </ul>
   </div>
 </nav>
 
-<!--
-<ul ngbNav #nav="ngbNav" class="nav-tabs">
-  <li ngbNavItem>
-    <a ngbNavLink>صفحه ی اصلی</a>
-    <ng-template ngbNavContent>First content</ng-template>
-  </li>
-  <li ngbNavItem>
-    <a ngbNavLink>Second</a>
-    <ng-template ngbNavContent>Second content</ng-template>
-  </li>
-</ul>
-<div [ngbNavOutlet]="nav"></div> -->
+
 
 
 <router-outlet></router-outlet>

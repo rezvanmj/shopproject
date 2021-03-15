@@ -7,83 +7,31 @@
   <li *ngFor="let shoppingProduct of shoppingProducts"class="added-product basket-product row my-5" >
 
 <div class="product-image col-lg-3 col-md-3 col-sm-4 ">
-  <img class="image-picture my-3" src="{{shoppingProduct.image}}">
+  <img class="image-picture my-3" [src]="shoppingProduct.image">
 </div>
 
 
 <div class="product-name col-lg-6 col-md-6 col-sm-4 my-5">
 <h2>{{shoppingProduct.name}}</h2>
 <p>قیمت : {{shoppingProduct.price}}</p>
+<div class="counter-btns">
+  <span class="plus pm-btn" (click)="addToBasket(shoppingProduct);">+</span>
+  <p class="count px-2" id="counter">{{shoppingProduct.count}}</p>
+  <span class="minus pm-btn" (click)="reduceFromBasket(shoppingProduct);">-</span>
+</div>
 </div>
 
 
 <div class="product-btn col-lg-3 col-md-3 col-sm-4 my-5">
-<button class="remove-btn" (click)="removeFromBasket(shoppingProduct); updatePrice();">حذف از لیست  <i class="far fa-window-close my-1 mx-1"></i></button>
-<a class="add-too-favorite-container justify-content-center "><p class="favorite-text">افزودن به علاقه مندی ها</p><i class="far fa-heart my-1 mx-1"></i></a>
+<button class="remove-btn" (click)="removeFromBasket(shoppingProduct);">حذف از لیست  <i class="far fa-window-close my-1 mx-1"></i></button>
+<a  (click)="addToFavorite(shoppingProduct)" class="add-too-favorite-container justify-content-center "><p class="favorite-text">افزودن به علاقه مندی ها</p><i class="far fa-heart my-1 mx-1"></i></a>
 </div>
 
 </li>
 
-
-
-<!--
-<li class="added-product basket-product row my-5" >
-
-  <div class="product-image col-lg-3 col-md-3 col-sm-4 ">
-    <img class="image-picture my-3" src="../../assets/images/120173296.jpg">
-  </div>
-
-
-  <div class="product-name col-lg-6 col-md-6 col-sm-4 my-5">
-  <h2>جای خواب گربه</h2>
-  <p>قیمت :430000</p>
-  </div>
-
-
-  <div class="product-btn col-lg-3 col-md-3 col-sm-4 my-5">
-  <button class="remove-btn">حذف از لیست <i class="far fa-window-close my-1 mx-1"></i></button>
-  <a class="add-too-favorite-container justify-content-center "><p class="favorite-text">افزودن به علاقه مندی ها</p><i class="far fa-heart my-1 mx-1"></i></a>
-  </div>
-
-  </li>
-
-
-
-
-
-  <li class="added-product basket-product row my-5" >
-
-    <div class="product-image col-lg-3 col-md-3 col-sm-4 ">
-      <img class="image-picture my-3" src="../../assets/images/120173296.jpg">
-    </div>
-
-
-    <div class="product-name col-lg-6 col-md-6 col-sm-4 my-5">
-    <h2>جای خواب گربه</h2>
-    <p>قیمت :430000</p>
-    </div>
-
-
-    <div class="product-btn col-lg-3 col-md-3 col-sm-4 my-5">
-    <button class="remove-btn">حذف از لیست <i class="far fa-window-close my-1 mx-1"></i></button>
-    <a class="add-too-favorite-container justify-content-center "><p class="favorite-text">افزودن به علاقه مندی ها</p><i class="far fa-heart my-1 mx-1"></i></a>
-    </div>
-
-    </li>-- -->
 </ul>
 
+<app-sum-of-prices [sumOfPrices]="sum"></app-sum-of-prices>
 
-
-
-<div class="product-prices container-fluid ">
-  <div class="row justify-content-center ">
-<div class=" buy-btn-container col-5">
-  <button class="payment-btn"> پرداخت</button>
-</div>
-<div class=" price-sum-container col-5">
-<p> مبلغ کل: </p><p>{{sum}}</p>
-</div>
-</div>
-</div>
 </div>
 

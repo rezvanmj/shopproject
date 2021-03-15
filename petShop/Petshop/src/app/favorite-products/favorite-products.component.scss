@@ -81,7 +81,7 @@ a{
 
   .basket-product{
      background-color:#D6E5ED;
-     border:2px solid gray ;
+     box-shadow: 2px 2px 2px grey;
      border-radius: 6px;
      margin: 6px;
 
@@ -125,6 +125,7 @@ a{
        max-width: 120px;
        border-radius: 6px;
        margin: auto;
+       box-shadow: 2px 2px 2px grey;
       i{
          color:#C86E6E;
        }

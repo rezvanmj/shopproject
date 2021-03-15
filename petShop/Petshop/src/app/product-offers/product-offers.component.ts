@@ -1,7 +1,7 @@
-import { ProductOfferService } from './../product-offer.service';
+import { ProductOfferService } from './../services/product-offer.service';
 import { IProduct } from './../interfaces/products';
 import { Component, OnInit } from '@angular/core';
-declare var $: any;
+
 
 
 @Component({
@@ -20,3 +20,4 @@ export class ProductOffersComponent implements OnInit {
 
 
 }
+

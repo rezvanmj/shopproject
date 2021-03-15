@@ -78,10 +78,10 @@ a{
 
   .basket-product{
      background-color:#D6E5ED;
-     border:2px solid gray ;
+
      border-radius: 6px;
      margin: 6px;
-
+     box-shadow: 2px 2px 2px grey;
 
 
 
@@ -122,6 +122,7 @@ a{
        max-width: 120px;
        border-radius: 6px;
        margin: auto;
+       box-shadow: 2px 2px 2px grey;
       i{
          color:#C86E6E;
        }
@@ -138,29 +139,22 @@ a{
     }
   }
 
-
-.product-prices{
-  border-top-right-radius: 8px;
-  border-top-left-radius: 8px;
-  padding: 10px;
-  background:$blue1;
-
-  .buy-btn-container{
-  button{color:white;
-  background-color: #377B37;
-  border: 1px solid #0f350f;
-   padding:10px 20px;
-  border-radius: 6px;}
-   }
-
-  .price-sum-container{
-    direction:rtl;
+  .counter-btns {
     display: inline-flex;
-    justify-content: right;
-    text-align: right;
-   p{font-size: 17px;
-  padding:10px;}
-  }
-}
+    margin: 4px;
+
+    .pm-btn{
+      color: black;
+      text-align: center;
+      background-color: #ffc107;
+      border-radius: 50px;
+      height: 30px;
+      width: 30px;
+      cursor:pointer;
+      line-height: 2;
+    font-size: 15px;
+    box-shadow: 2px 2px 1px grey;
+      }
+    }
 
 }

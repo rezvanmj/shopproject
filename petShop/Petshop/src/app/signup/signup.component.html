@@ -11,36 +11,36 @@
 
   <div class="row justify-content-center ">
     <div >
-    <input placeholder="نام" class="name-input small-input col-5">
+    <input autocomplete="off" name="name" [(ngModel)]="name" placeholder="نام" class="name-input small-input col-5">
   </div>
 
 
   <div class=" justify-content-center ">
-    <input placeholder="نام خانوادگی" class="Lastname-input small-input col-5">
+    <input autocomplete="off" name="lname" [(ngModel)]="LastName" placeholder="نام خانوادگی" class="Lastname-input small-input col-5">
   </div>
 </div>
 
 
   <div >
-    <input placeholder="نام کاربری" class="username-input big-input col-12">
+    <input autocomplete="off" name="username" [(ngModel)]="userName" placeholder="نام کاربری" class="username-input big-input col-12">
   </div>
 
   <div>
-    <input placeholder="ایمیل" class="email-input big-input col-12">
+    <input autocomplete="off" name="email" [(ngModel)]="Email" placeholder="ایمیل" class="email-input big-input col-12">
   </div>
 
   <div>
-    <input placeholder="کلمه ی عبور" class="password-input big-input col-12">
+    <input autocomplete="off" name="pass" [(ngModel)]="password" placeholder="کلمه ی عبور" class="password-input big-input col-12">
   </div>
 
 
 
 </div>
 
-  <div><a class="forgot-pass-txt text-right">قبلا ثبت نام کرده ام</a>
+  <div><a [routerLink]="['/signIn']" class="forgot-pass-txt text-right">قبلا ثبت نام کرده ام</a>
   </div>
 
-  <button class="signup-btn">ثبت نام</button>
+  <button (click)="signUp();" class="signup-btn">ثبت نام</button>
   </form>
 
   </div>

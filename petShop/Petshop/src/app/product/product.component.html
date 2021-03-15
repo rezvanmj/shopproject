@@ -9,15 +9,15 @@
 
      <div class="product-price my-2">{{product.price}} قیمت</div>
 
-     <div class="product-button"><button class="add-too-basket-btn">افزودن به سبد خرید<i class="fas fa-shopping-basket"></i></button></div>
+     <div class="product-button"><button (click)="addToBasket(product)" class="add-too-basket-btn">افزودن به سبد خرید<i class="fas fa-shopping-basket"></i></button></div>
 
 
   </div>
 
 
   <div class="zoom-image-container col-lg-4 col-md-6 col-sm-12 col-xs-12 text-center justify-content-center ">
-     <div class="product-image my-2"><img src="{{product.image}}" class="product-picture"></div>
-     <a class="add-too-favorite-container "><p class="favorite-text">افزودن به علاقه مندی ها</p><i class="far fa-heart my-1 mx-1"></i></a>
+     <div class="product-image my-2"><img [src]="product.image" class="product-picture"></div>
+     <a (click)="addToFavorite(product)" class="add-too-favorite-container "><p class="favorite-text">افزودن به علاقه مندی ها</p><i class="far fa-heart my-1 mx-1"></i></a>
   </div>
 </div>
 

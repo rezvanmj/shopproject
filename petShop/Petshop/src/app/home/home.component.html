@@ -4,16 +4,7 @@
 <div class="products-searchbar justify-content-center d-flex col-lg-4 col-md-4 col-sm-4 col-xs-12">
 
   <div class="input-group rounded">
-    <input
-    type="search"
-     class="form-control rounded"
-     placeholder="جستجو"
-     aria-label="Search"
-    aria-describedby="search-addon"
-    ng-model="searchText"/>
-    <span class="input-group-text border-0" id="search-addon">
-      <i class="fas fa-search"></i>
-    </span>
+   <app-searchbar ></app-searchbar>
   </div>
 
 
@@ -28,7 +19,7 @@
 
 
   <div class="form-check date-filter">
-    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+    <input  class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
     <label class="form-check-label" for="flexCheckDefault">
      بر اساس تاریخ ثبت محصول
     </label>
@@ -40,32 +31,32 @@
     </label>
 
     <div class="form-check pet-type type1">
-      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault0">
+      <input (change)="filter('all')" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault0">
       <label class="form-check-label" for="flexRadioDefault1">
        همه
       </label>
     </div>
 
     <div class="form-check pet-type type1">
-      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+      <input #food (change)="filter('food')"  class="form-check-input" type="radio"  name="flexRadioDefault" id="flexRadioDefault1">
       <label class="form-check-label" for="flexRadioDefault1">
         غذا
       </label>
     </div>
     <div class="form-check pet-type type2">
-      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
+      <input #collar (change)="filter('collar')" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
       <label class="form-check-label" for="flexRadioDefault2">
         قلاده
       </label>
     </div>
     <div class="form-check pet-type type3">
-      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+      <input #scratcher (change)="filter('scratcher')" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
       <label class="form-check-label" for="flexRadioDefault1">
         اسکرچر
       </label>
     </div>
     <div class="form-check pet-type type4">
-      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4" >
+      <input  #bed (change)="filter('bed')"  class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4" >
       <label class="form-check-label" for="flexRadioDefault2">
         جای خواب
       </label>
@@ -89,15 +80,15 @@
 >
 
   <a [routerLink]="['product' , product.id]">
-  <div class="product-image-container"> <img class="product-picture" src="{{product.image}}"> </div>
+  <div class="product-image-container"> <img class="product-picture" [src]="product.image"> </div>
     <div class="product-name-container my-3"> <p class="product-name">{{product.name}}</p>
     <p class="availablity" [style.color]="product.availablity ? 'green' :'#C86E6E'  " >{{product.availablity ? 'موجود' : 'ناموجود'}}</p>
     </div>
   </a>
 
     <div class="product-icons my-3">
-    <a (click)="favoriteComponent.addToFavorite(product);" class="product-heart-icon mx-2"><i class="far fa-heart"></i></a>
-    <a (click)="basketlistComponent.addToBasket(product)"  class="product-basket-icon mx-2"><i class="fas fa-shopping-basket"></i></a>
+    <a (click)="addToFavorite(product);" class="product-heart-icon mx-2"><i class="far fa-heart"></i></a>
+    <a (click)="addToBasket(product)"  class="product-basket-icon mx-2"><i class="fas fa-shopping-basket"></i></a>
   </div>
 </div>
 </div>

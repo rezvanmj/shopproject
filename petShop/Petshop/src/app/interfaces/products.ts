@@ -6,6 +6,7 @@ image: String ;
 availablity: boolean ;
 information : String;
 type: Ptype ;
+count ?: number ;
 }
 
 export enum Ptype{

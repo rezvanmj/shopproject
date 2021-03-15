@@ -1,6 +1,9 @@
+import { ShoppingBasketService } from './../services/shopping-basket.service';
+import { FavoriteService } from './../services/favorite.service';
+import { FavoriteProductsComponent } from './../favorite-products/favorite-products.component';
 import { IProduct, Ptype } from './../interfaces/products';
-import { ShoppingBasketService } from './../shopping-basket.service';
 import { Component, OnInit, Output } from '@angular/core';
+
 
 @Component({
   selector: 'app-shopping-basket',
@@ -9,46 +12,61 @@ import { Component, OnInit, Output } from '@angular/core';
 })
 export class ShoppingBasketComponent implements OnInit {
 
+  shoppingProducts : IProduct[] = [];
 
-  constructor() { }
-  sum:number = 0;
+  constructor( private favservise :FavoriteService , private basketservice : ShoppingBasketService) {
+   this.shoppingProducts = basketservice.shoppingProducts;
+   }
+
 
 
   ngOnInit(): void {
 
-    //TODO debug:updating the price counter
-
-     for(var i=0 ; i<this.shoppingProducts.length ; i++){
-       this.sum = this.sum + this.shoppingProducts[i].price;
-       console.log(this.sum);
-    }
-
-
+    for(var i=0 ; i<this.shoppingProducts.length ; i++){
+      this.sum = this.sum + this.shoppingProducts[i].price;
+   }
 
   }
 
-  addToBasket(product : IProduct){
-    this.shoppingProducts.push(product);
-    console.log(product + "added to baskets");
-  }
+  sum : number = 0 ;
 
-  removeFromBasket(product : IProduct){
-    console.log(product );
-    const index : number = this.shoppingProducts.indexOf(product);
-    if(index != -1){
-         this.shoppingProducts.splice(index ,1 );
+
+  productCounter(shoppingProduct : IProduct): number  {
+    let counter = 0 ;
+    for(let i =0 ; i < this.shoppingProducts.length ; i++ ){
+      if(this.shoppingProducts[i] === shoppingProduct){
+        counter ++ ;
+      }
     }
-
+    return counter ;
   }
 
   updatePrice(){
+    this.sum = 0;
     for(var i=0 ; i<this.shoppingProducts.length ; i++){
-      this.sum = this.sum + this.shoppingProducts[i].price;
-      console.log(this.sum);
+      this.sum = this.sum + this.shoppingProducts[i].count*this.shoppingProducts[i].price;
    }
   }
 
-   shoppingProducts : IProduct[] = ShoppingBasketService.shoppingProducts;
-   countingBasketProduct:number = this.shoppingProducts.length;
+  removeFromBasket(product: IProduct){
+    this.basketservice.removeFromBasket(product);
+    this.updatePrice();
+  }
+
+  reduceFromBasket(product: IProduct){
+    this.basketservice.reduceFromBasket(product);
+    this.updatePrice();
+  }
+
+  addToBasket(product : IProduct){
+    this.basketservice.addToBasket(product);
+    this.updatePrice();
+  }
+
+  addToFavorite(product: IProduct){
+  this.favservise.addToFavorite(product);
+  }
 
 }
+
+
